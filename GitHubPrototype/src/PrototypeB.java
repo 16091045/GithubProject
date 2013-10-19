@@ -46,36 +46,35 @@ public class PrototypeB extends javax.swing.JFrame {
         Remote = new javax.swing.JPanel();
         CommandLinePane = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        SidePane = new javax.swing.JPanel();
-        NotificationArea = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        commitArea = new javax.swing.JLayeredPane();
+        commitHistoryButton = new javax.swing.JPanel();
+        commitHistory = new javax.swing.JLabel();
+        commitIssue = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollBar1 = new javax.swing.JScrollBar();
+        commitNotification = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        area = new javax.swing.JLayeredPane();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jSeparator6 = new javax.swing.JSeparator();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jSeparator7 = new javax.swing.JSeparator();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        notificationPane = new javax.swing.JPanel();
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        jSeparator13 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
-        IssuePane = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jScrollBar1 = new javax.swing.JScrollBar();
-        UncommitedPane = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         userName = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -125,6 +124,11 @@ public class PrototypeB extends javax.swing.JFrame {
         jLabel6.setText("!   3 files uncommited");
 
         jButton1.setText("Merge");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("+ File1");
@@ -220,6 +224,7 @@ public class PrototypeB extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LocalLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
                         .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -251,7 +256,7 @@ public class PrototypeB extends javax.swing.JFrame {
         );
         RemoteLayout.setVerticalGroup(
             RemoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 439, Short.MAX_VALUE)
         );
 
         Tabbed.addTab("Remote", Remote);
@@ -275,256 +280,171 @@ public class PrototypeB extends javax.swing.JFrame {
             .addGroup(CommandLinePaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        SidePane.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        SidePane.setPreferredSize(new java.awt.Dimension(300, 501));
+        commitArea.setBackground(new java.awt.Color(153, 153, 153));
+        commitArea.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel9.setText("○ User1");
+        commitHistoryButton.setBackground(new java.awt.Color(225, 225, 225));
+        commitHistoryButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        commitHistoryButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                commitHistoryButtonMouseClicked(evt);
+            }
+        });
 
-        jLabel10.setText("Date: 14/09/2013");
+        commitHistory.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        commitHistory.setText("> Commit History");
 
-        jLabel11.setText("Title: Update bla");
-
-        jLabel12.setText("○ User1");
-
-        jLabel13.setText("Date: 14/09/2013");
-
-        jLabel14.setText("Title: Update bla");
-
-        jLabel17.setText("○ User1");
-
-        jLabel18.setText("Date: 14/09/2013");
-
-        jLabel19.setText("Title: Update bla");
-
-        jLabel21.setText("Date: 14/09/2013");
-
-        jLabel22.setText("Title: Update bla");
-
-        jLabel23.setText("○ User1");
-
-        jLabel24.setText("Date: 14/09/2013");
-
-        jLabel25.setText("Title: Update bla");
-
-        jLabel26.setText("○ User1");
-
-        jLabel20.setText("○ User1");
-
-        javax.swing.GroupLayout NotificationAreaLayout = new javax.swing.GroupLayout(NotificationArea);
-        NotificationArea.setLayout(NotificationAreaLayout);
-        NotificationAreaLayout.setHorizontalGroup(
-            NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator3)
-            .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jSeparator5)
-            .addGroup(NotificationAreaLayout.createSequentialGroup()
-                .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(NotificationAreaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(NotificationAreaLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(NotificationAreaLayout.createSequentialGroup()
-                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(NotificationAreaLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(NotificationAreaLayout.createSequentialGroup()
-                                .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(NotificationAreaLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel14))))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(NotificationAreaLayout.createSequentialGroup()
-                        .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(NotificationAreaLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(NotificationAreaLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
-            .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(NotificationAreaLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        NotificationAreaLayout.setVerticalGroup(
-            NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(NotificationAreaLayout.createSequentialGroup()
+        javax.swing.GroupLayout commitHistoryButtonLayout = new javax.swing.GroupLayout(commitHistoryButton);
+        commitHistoryButton.setLayout(commitHistoryButtonLayout);
+        commitHistoryButtonLayout.setHorizontalGroup(
+            commitHistoryButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(commitHistoryButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel22)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel25)
-                .addGap(23, 23, 23)
-                .addComponent(jLabel26)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NotificationAreaLayout.createSequentialGroup()
-                    .addContainerGap(289, Short.MAX_VALUE)
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(108, 108, 108)))
-            .addGroup(NotificationAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NotificationAreaLayout.createSequentialGroup()
-                    .addContainerGap(363, Short.MAX_VALUE)
-                    .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(34, 34, 34)))
-        );
-
-        notificationPane.setBackground(new java.awt.Color(225, 225, 225));
-        notificationPane.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel15.setText("> Commit History");
-
-        javax.swing.GroupLayout notificationPaneLayout = new javax.swing.GroupLayout(notificationPane);
-        notificationPane.setLayout(notificationPaneLayout);
-        notificationPaneLayout.setHorizontalGroup(
-            notificationPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(notificationPaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(commitHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(116, Short.MAX_VALUE))
         );
-        notificationPaneLayout.setVerticalGroup(
-            notificationPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, notificationPaneLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addContainerGap())
+        commitHistoryButtonLayout.setVerticalGroup(
+            commitHistoryButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(commitHistoryButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(commitHistory)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        IssuePane.setBackground(new java.awt.Color(225, 225, 225));
-        IssuePane.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        commitHistoryButton.setBounds(0, 0, 300, 43);
+        commitArea.add(commitHistoryButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        commitIssue.setBackground(new java.awt.Color(225, 225, 225));
+        commitIssue.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText("> Issues");
 
-        javax.swing.GroupLayout IssuePaneLayout = new javax.swing.GroupLayout(IssuePane);
-        IssuePane.setLayout(IssuePaneLayout);
-        IssuePaneLayout.setHorizontalGroup(
-            IssuePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(IssuePaneLayout.createSequentialGroup()
+        javax.swing.GroupLayout commitIssueLayout = new javax.swing.GroupLayout(commitIssue);
+        commitIssue.setLayout(commitIssueLayout);
+        commitIssueLayout.setHorizontalGroup(
+            commitIssueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(commitIssueLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
-        IssuePaneLayout.setVerticalGroup(
-            IssuePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(IssuePaneLayout.createSequentialGroup()
+        commitIssueLayout.setVerticalGroup(
+            commitIssueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(commitIssueLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        UncommitedPane.setBackground(new java.awt.Color(225, 225, 225));
-        UncommitedPane.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        commitIssue.setBounds(0, 430, 300, 43);
+        commitArea.add(commitIssue, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jScrollBar1.setBounds(280, 40, 17, 340);
+        commitArea.add(jScrollBar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        commitNotification.setBackground(new java.awt.Color(225, 225, 225));
+        commitNotification.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel27.setText("> Pull Notifications");
+        jLabel27.setText("> Notifications");
 
-        javax.swing.GroupLayout UncommitedPaneLayout = new javax.swing.GroupLayout(UncommitedPane);
-        UncommitedPane.setLayout(UncommitedPaneLayout);
-        UncommitedPaneLayout.setHorizontalGroup(
-            UncommitedPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(UncommitedPaneLayout.createSequentialGroup()
+        javax.swing.GroupLayout commitNotificationLayout = new javax.swing.GroupLayout(commitNotification);
+        commitNotification.setLayout(commitNotificationLayout);
+        commitNotificationLayout.setHorizontalGroup(
+            commitNotificationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(commitNotificationLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
-        UncommitedPaneLayout.setVerticalGroup(
-            UncommitedPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(UncommitedPaneLayout.createSequentialGroup()
+        commitNotificationLayout.setVerticalGroup(
+            commitNotificationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(commitNotificationLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout SidePaneLayout = new javax.swing.GroupLayout(SidePane);
-        SidePane.setLayout(SidePaneLayout);
-        SidePaneLayout.setHorizontalGroup(
-            SidePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(notificationPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(IssuePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SidePaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(NotificationArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(SidePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(UncommitedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        SidePaneLayout.setVerticalGroup(
-            SidePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SidePaneLayout.createSequentialGroup()
-                .addComponent(notificationPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(SidePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NotificationArea, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(IssuePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(SidePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SidePaneLayout.createSequentialGroup()
-                    .addContainerGap(342, Short.MAX_VALUE)
-                    .addComponent(UncommitedPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(47, 47, 47)))
-        );
+        commitNotification.setBounds(0, 380, 300, 50);
+        commitArea.add(commitNotification, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        area.setVisible(false);
+
+        jLabel10.setText("Date: 14/09/2013");
+        jLabel10.setBounds(30, 300, 86, 14);
+        area.add(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel11.setText("Title: Update bla");
+        jLabel11.setBounds(30, 320, 120, 14);
+        area.add(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel12.setText("○ User1");
+        jLabel12.setBounds(20, 70, 70, 14);
+        area.add(jLabel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel13.setText("Date: 14/09/2013");
+        jLabel13.setBounds(30, 90, 86, 14);
+        area.add(jLabel13, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel14.setText("Title: Update bla");
+        jLabel14.setBounds(30, 40, 110, 14);
+        area.add(jLabel14, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel17.setText("○ User1");
+        jLabel17.setBounds(20, 140, 90, 14);
+        area.add(jLabel17, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel18.setText("Date: 14/09/2013");
+        jLabel18.setBounds(30, 160, 86, 14);
+        area.add(jLabel18, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel19.setText("Title: Update bla");
+        jLabel19.setBounds(30, 180, 110, 14);
+        area.add(jLabel19, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel21.setText("Date: 14/09/2013");
+        jLabel21.setBounds(30, 230, 86, 14);
+        area.add(jLabel21, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel22.setText("Title: Update bla");
+        jLabel22.setBounds(30, 250, 120, 14);
+        area.add(jLabel22, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel23.setText("○ User1");
+        jLabel23.setBounds(20, 210, 100, 14);
+        area.add(jLabel23, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jSeparator9.setBounds(0, 58, 280, 2);
+        area.add(jSeparator9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jSeparator10.setBounds(0, 136, 280, 0);
+        area.add(jSeparator10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jSeparator11.setBounds(0, 130, 280, 70);
+        area.add(jSeparator11, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jSeparator12.setBounds(0, 200, 280, 2);
+        area.add(jSeparator12, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jSeparator13.setBounds(0, 270, 280, 10);
+        area.add(jSeparator13, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel15.setText("○ User1");
+        jLabel15.setBounds(20, 280, 70, 14);
+        area.add(jLabel15, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel9.setText("○ User1");
+        jLabel9.setBounds(20, 0, 80, 14);
+        area.add(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel20.setText("Date: 14/09/2013");
+        jLabel20.setBounds(30, 20, 86, 14);
+        area.add(jLabel20, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel44.setText("Title: Update bla");
+        jLabel44.setBounds(30, 110, 110, 14);
+        area.add(jLabel44, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        area.setBounds(10, 50, 260, 330);
+        commitArea.add(area, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         userName.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         userName.setText("User1");
@@ -642,22 +562,21 @@ public class PrototypeB extends javax.swing.JFrame {
             .addComponent(CommandLinePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Tabbed)
-                .addGap(318, 318, 318))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(0, 648, Short.MAX_VALUE)
-                    .addComponent(SidePane, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(commitArea, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Tabbed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CommandLinePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(SidePane, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 92, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Tabbed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(commitArea))
+                .addGap(18, 18, 18)
+                .addComponent(CommandLinePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -690,6 +609,21 @@ public class PrototypeB extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Merge mergeFrame = new Merge();
+        mergeFrame.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void commitHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_commitHistoryButtonMouseClicked
+        // TODO add your handling code here:
+        if (commitArea.isVisible()) {
+            commitArea.setVisible(false);
+
+        } else {
+            commitArea.setVisible(true);
+        }
+    }//GEN-LAST:event_commitHistoryButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -726,7 +660,6 @@ public class PrototypeB extends javax.swing.JFrame {
          * Create and display the form
          */
         java.awt.EventQueue.invokeLater(new Runnable() {
-
             public void run() {
                 new PrototypeB().setVisible(true);
             }
@@ -734,15 +667,17 @@ public class PrototypeB extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CommandLinePane;
-    private javax.swing.JPanel IssuePane;
     private javax.swing.JPanel Local;
-    private javax.swing.JPanel NotificationArea;
     private javax.swing.JPanel Remote;
-    private javax.swing.JPanel SidePane;
     private javax.swing.JTabbedPane Tabbed;
     private javax.swing.JButton TreeViewButton;
-    private javax.swing.JPanel UncommitedPane;
+    private javax.swing.JLayeredPane area;
+    private javax.swing.JLayeredPane commitArea;
     private javax.swing.JButton commitButton;
+    private javax.swing.JLabel commitHistory;
+    private javax.swing.JPanel commitHistoryButton;
+    private javax.swing.JPanel commitIssue;
+    private javax.swing.JPanel commitNotification;
     private javax.swing.JMenu fileOption;
     private javax.swing.JMenu helpOption;
     private javax.swing.JButton jButton1;
@@ -761,15 +696,13 @@ public class PrototypeB extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -794,16 +727,15 @@ public class PrototypeB extends javax.swing.JFrame {
     private javax.swing.JScrollBar jScrollBar4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
     private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JPanel notificationPane;
     private javax.swing.JMenu toolOption;
     private javax.swing.JMenu userName;
     // End of variables declaration//GEN-END:variables

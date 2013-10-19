@@ -14,6 +14,7 @@ public class PrototypeA extends javax.swing.JFrame {
      */
     public PrototypeA() {
         initComponents();
+
     }
 
     /**
@@ -66,7 +67,7 @@ public class PrototypeA extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         notificationPane = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
+        notificationLabel = new javax.swing.JLabel();
         IssuePane = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jScrollBar1 = new javax.swing.JScrollBar();
@@ -392,8 +393,13 @@ public class PrototypeA extends javax.swing.JFrame {
         notificationPane.setBackground(new java.awt.Color(225, 225, 225));
         notificationPane.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel15.setText("> Notification");
+        notificationLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        notificationLabel.setText("> Notification");
+        notificationLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                notificationLabelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout notificationPaneLayout = new javax.swing.GroupLayout(notificationPane);
         notificationPane.setLayout(notificationPaneLayout);
@@ -401,14 +407,14 @@ public class PrototypeA extends javax.swing.JFrame {
             notificationPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(notificationPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(notificationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         notificationPaneLayout.setVerticalGroup(
             notificationPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, notificationPaneLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel15)
+                .addComponent(notificationLabel)
                 .addContainerGap())
         );
 
@@ -611,6 +617,10 @@ public class PrototypeA extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+    private void notificationLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notificationLabelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notificationLabelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -670,7 +680,6 @@ public class PrototypeA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -717,6 +726,7 @@ public class PrototypeA extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JLabel notificationLabel;
     private javax.swing.JPanel notificationPane;
     private javax.swing.JMenu toolOption;
     private javax.swing.JMenu userName;

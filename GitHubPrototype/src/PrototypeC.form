@@ -201,8 +201,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="CommandLinePane" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Component id="RemoteTab" max="32767" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="SidePane" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -394,6 +395,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="+ File1"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
