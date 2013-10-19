@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Author: Darryl.Burke
+ * Code obtained from https://forums.oracle.com/thread/1361901
  */
 
 import java.awt.Dimension;
